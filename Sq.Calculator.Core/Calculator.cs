@@ -21,5 +21,12 @@ namespace Sq.Calculator.Core
             OperationHistory.Add(new OperationHistoryItem(x, Operator.Subtract));
             return State;
         }
+
+        public decimal Multiply(decimal x)
+        {
+            State = State * x;
+            OperationHistory.Add(new OperationHistoryItem(x, Operator.Multiply));
+            return State;
+        }
     }
 }
