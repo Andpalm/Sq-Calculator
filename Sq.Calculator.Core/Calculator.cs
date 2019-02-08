@@ -28,5 +28,13 @@ namespace Sq.Calculator.Core
             OperationHistory.Add(new OperationHistoryItem(x, Operator.Multiply));
             return State;
         }
+
+        public decimal Divide(decimal x)
+        {
+            if (x == 0) throw new ArgumentException("Can´t divide with zero");
+            State = State / x;
+            OperationHistory.Add(new OperationHistoryItem(x, Operator.Divide));
+            return State;
+        }
     }
 }
